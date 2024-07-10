@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet"
+    integrity="sha384-E4Dbl4YgBs7J+dmX6ksgsOYIQpCh4JJNkQzz0Op1z62HwKSkDxWbr70CClFpFvpr" crossorigin="anonymous">
+  <style>
+    svg {
+      color: #fff;
+      fill: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .main-content {
+      background-color: #343a40;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    .nav-tabs .nav-link.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .nav-tabs .nav-link {
+      color: #fff;
+    }
+
+    .nav-tabs .nav-link:hover {
+      background-color: #0069d9;
+    }
+
+    .table-head-blue {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .date-picker-container {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .date-picker-container .form-control {
+      width: 150px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+
+  </svg>
+  <div class="row" style="margin: 0;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark col-lg-2" style="height: 100vh;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <span class="fs-4 text-center">LOGO</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="#network-plan-content" class="nav-link active" aria-current="page" data-bs-toggle="tab">
+            <svg class="bi pe-none me-2" width="16" height="16">
+              <use xlink:href="#home"></use>
+            </svg>
+            Network Plan
+          </a>
+        </li>
+        <li>
+          <a href="#demand-flow-content" class="nav-link text-white" data-bs-toggle="tab">
+            <svg class="bi pe-none me-2" width="16" height="16">
+              <use xlink:href="#table"></use>
+            </svg>
+            Demand Flow
+          </a>
+        </li>
+        <li>
+          <a href="#performance-content" class="nav-link text-white" data-bs-toggle="tab">
+            <svg class="bi pe-none me-2" width="16" height="16">
+              <use xlink:href="#grid"></use>
+            </svg>
+            Performance
+          </a>
+        </li>
+        <li>
+          <a href="#profile-content" class="nav-link text-white" data-bs-toggle="tab">
+            <svg class="bi pe-none me-2" width="16" height="16">
+              <use xlink:href="#people-circle"></use>
+            </svg>
+            Profile
+          </a>
+        </li>
+      </ul>
+      <hr>
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="./avatar.png" alt="" width="32" height="32" class="rounded-circle me-2">
+          <strong>Admin</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-lg-10 main-content">
+      <div class="tab-content">
+        <!-- Network Plan Content -->
+        <div class="tab-pane fade show active" id="network-plan-content">
+          <h1 class="text-center mb-5 mt-4">NETWORK PLANNING SYSTEM(NPS)</h1>
+          <div class="row">
+            <div class="col-sm-4 mb-3">
+              <label for="vendorSelect" class="form-label">Select a Vendor</label>
+              <select class="form-select" id="vendorSelect">
+                <option selected>Choose...</option>
+                <option value="1">Vendor 1</option>
+                <option value="2">Vendor 2</option>
+                <option value="3">Vendor 3</option>
+              </select>
+            </div>
+            <div class="col-sm-4 mb-3">
+              <label for="familyCodeSelect" class="form-label">Select a Family Code</label>
+              <select class="form-select" id="familyCodeSelect">
+                <option selected>Choose...</option>
+                <option value="1">Family Code 1</option>
+                <option value="2">Family Code 2</option>
+                <option value="3">Family Code 3</option>
+              </select>
+            </div>
+            <div class="col-sm-4 mb-3">
+              <label for="siteSelect" class="form-label">Select a Site</label>
+              <select class="form-select" id="siteSelect">
+                <option selected>Choose...</option>
+                <option value="1">Site 1</option>
+                <option value="2">Site 2</option>
+                <option value="3">Site 3</option>
+              </select>
+            </div>
+          </div>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary"
+                type="button" role="tab" aria-controls="summary" aria-selected="true">Summary</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="transfers-tab" data-bs-toggle="tab" data-bs-target="#transfers" type="button"
+                role="tab" aria-controls="transfers" aria-selected="false">Transfers</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+              <!-- Summary content here -->
+              <p>Summary content goes here.</p>
+            </div>
+            <div class="tab-pane fade" id="transfers" role="tabpanel" aria-labelledby="transfers-tab">
+              <!-- Transfers content here -->
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead class="table-head-blue">
+                    <tr>
+                      <th scope="col">Source</th>
+                      <th scope="col">Destination</th>
+                      <th scope="col">Weekdate</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">SKUs_count</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Source 1</td>
+                      <td>Destination 1</td>
+                      <td>2024-06-25</td>
+                      <td>10</td>
+                      <td>5</td>
+                    </tr>
+                    <tr>
+                      <td>Source 2</td>
+                      <td>Destination 2</td>
+                      <td>2024-06-26</td>
+                      <td>15</td>
+                      <td>8</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="text-end">
+                <button type="button" class="btn btn-primary">Download</button>
+              </div>
+              <div class="date-picker-container mt-3">
+                <input type="date" id="datepicker" class="form-control" placeholder="Select date">
+                <button type="button" class="btn btn-primary ms-2">Generate SAP Files</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Tab Contents (placeholders) -->
+        <div class="tab-pane fade" id="demand-flow-content">
+          <p>Demand Flow content goes here.</p>
+        </div>
+        <div class="tab-pane fade" id="performance-content">
+          <p>Performance content goes here.</p>
+        </div>
+        <div class="tab-pane fade" id="profile-content">
+          <p>Profile content goes here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <script>
+    // Initialize datepicker
+    $('#datepicker').datepicker({
+      format: 'dd/mm/yyyy',
+      autoclose: true,
+      todayHighlight: true
+    });
+
+    // Activate tab on sidebar item click
+    document.addEventListener('DOMContentLoaded', function () {
+      const sidebarLinks = document.querySelectorAll('.nav-link');
+
+      sidebarLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent default link behavior
+          const tabTarget = this.getAttribute('href'); // Get target tab ID from href attribute
+          const tabPane = document.querySelector(tabTarget); // Find corresponding tab pane
+
+          if (tabPane) {
+            const tab = new bootstrap.Tab(tabPane); // Create new Tab object
+            tab.show(); // Show the tab
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
